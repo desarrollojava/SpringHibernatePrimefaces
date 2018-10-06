@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head><title>Persona</title></h:head>
+    <h:body>
+        <h:form id="IdForm">
+            <table>
+                <tr>
+                    <td><h:outputLabel for="id" value="Id : " /></td>
+                    <td><p:inputText id="id" value="#{presentacionPersona.idPersona}">
+                        </p:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="nombres" value="Nombre : " /></td>
+                    <td><p:inputText id="nombres" value="#{presentacionPersona.nombres}">
+
+                        </p:inputText>
+                        <p:message id="nameMsg" for="nombres" display="icon"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="surname" value="Apellido : " /></td>
+                    <td><p:inputText id="surname" value="#{presentacionPersona.apellidos}">
+
+                        </p:inputText>
+                        <p:message id="surnameMsg" for="surname" display="icon"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel for="direccion" value="Direccion : " /></td>
+                    <td><p:inputText id="direccion" value="#{presentacionPersona.direccionDomicilio}">
+
+                        </p:inputText>
+                        <p:message id="direccionMsg" for="direccion" display="icon"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p:commandButton id="idGuarda" value="GUARDAR" action="#{presentacionPersona.guardarPersona}" ajax="false"/></td>
+                    <td><p:commandButton id="idBusca" value="BUSCAR" action="#{presentacionPersona.buscar}" ajax="false" update="IdForm"/></td>
+                    <td><p:commandButton id="idElimina" value="ELIMINAR" action="#{presentacionPersona.eliminar}" ajax="false"/></td>
+                    <td><p:commandButton id="idActualiza" value="ACTUALIZAR" action="#{presentacionPersona.actualizar}" ajax="false"/></td>
+                    <td><p:commandButton id="idLista" value="LISTAR PERSONAS" action="#{presentacionPersona.listar}" ajax="false"/></td>
+                    <td><p:commandButton id="idBorra" value="BORRAR" action="#{presentacionPersona.reset}" ajax="false"/></td>
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html> 
