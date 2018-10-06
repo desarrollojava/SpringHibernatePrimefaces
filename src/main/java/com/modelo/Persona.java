@@ -16,8 +16,8 @@ public class Persona {
 
     private int idPersona;
     private String nombres;
-    private int apellidos;
-    private int direccionDomicilio;
+    private String apellidos;
+    private String direccionDomicilio;
 
     @Id
     @Column(name = "idPersona", unique = true, nullable = false)
@@ -39,20 +39,20 @@ public class Persona {
     }
 
     @Column(name = "apellidos", unique = true, nullable = false)
-    public int getApellidos() {
+    public String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(int apellidos) {
+    public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
     @Column(name = "direccionDomicilio", unique = true, nullable = false)
-    public int getDireccionDomicilio() {
+    public String getDireccionDomicilio() {
         return direccionDomicilio;
     }
 
-    public void setDireccionDomicilio(int direccionDomicilio) {
+    public void setDireccionDomicilio(String direccionDomicilio) {
         this.direccionDomicilio = direccionDomicilio;
     }
 
